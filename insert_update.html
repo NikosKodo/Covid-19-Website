@@ -1,0 +1,124 @@
+<?php
+include "databaseconnection.php"
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>visit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/episkepsh.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+</head>
+<body>
+
+ <section class="krousmaboxsec">
+    <div id="message3"></div>
+    <form class="krousmabox" action="" method="post">
+        <h1>Are you a Covid-19 case?</h1>
+        <div><input type="checkbox" id="cases" name="cases" value="cases" placeholder="Check if you are"/></div>
+        <h2>When?</h2>
+        <div><input type="datetime-local" id="date2" name="date2" value="" placeholder="Date"/></div>
+        <h1>Which place did you visit?</h1>
+        <div><input type="text" id="krousma_visit" name="krousma_visit" value="" placeholder="Place Name"/></div>
+        <button type="submit" name="update2" id='but3'>Update</button>
+        <div><input type="button" id='but3' onclick="submitForm2();" name="save_contact" value="Submit" /></div>
+    </form>
+</section>
+
+<section class="episkepshboxsec">
+  <div id="message"></div>
+      <form class="episkepshbox" action="" method="post">
+          <h1>Did you visit any of these places?</h1>
+          <div><input type="text" id="visit" name="visit" value="" placeholder="Place Name"/></div>
+          <h3>Number of people?</h3>
+          <div><input type="number" id='number' name="number" value="" placeholder="Number of people"/></div>
+          <button type="submit" name="update" id='but2'>Update</button>
+          <div><input type="button" id='but2' onclick="submitForm();" name="save_contact" value="Submit and go to map!" /></div>
+      </form>
+</section>
+</form>
+
+  
+</body>
+
+<script type="text/javascript">
+  function submitForm2() 
+  {
+      //to =name deutero einai to name tou input panw  
+      var krousma_visit = document.getElementById("krousma_visit").value;
+      var date2 = document.getElementById("date2").value;
+      var cases = document.getElementById("cases").value;
+
+      if(krousma_visit!= '' && date2!= '' && cases!= '')
+      {
+          var formData2 = {krousma_visit: krousma_visit,date2: date2,cases: cases};
+          $('#message3').html('<span style="color: red">Processing form. . . please wait. . .</span>');
+          $.ajax({url: "http://localhost/helloworld/api/krousma_submit.php", type: 'POST', data: formData2, success: function(response2)
+          {
+              var resu = JSON.parse(response2);
+              console.log(resu);
+              if(resu.success == true)
+                  $('#message3').html('<span style="color: green">Form submitted successfully</span>');
+              else
+                  $('#message3').html('<span style="color: red">Form not submitted. Some error in running the database query.</span>');
+          }
+          });
+      }	
+  } 
+</script>
+
+<script type="text/javascript">
+		function submitForm() 
+		{
+			//to =name deutero einai to name tou input panw 
+			var visit = document.getElementById("visit").value; 
+			var number = document.getElementById("number").value; 
+      let url = location.href;
+
+      if(visit != '' && number!= '')
+			{
+				var formData = {visit: visit,number: number};
+        $('#message').html('<span style="color: green">Form submitted successfully</span>');
+        window.location.href = 'arxiko.html';
+				$.ajax({url: "http://localhost/helloworld/episkepsh_submit.php", type: 'POST', data: formData, success: function(response)
+				{
+          var resu = JSON.parse(response);
+              console.log(resu);
+              if(resu.success == true)
+                  $('#message').html('<span style="color: green">Form submitted successfully</span>');
+              else
+                  $('#message').html('<span style="color: red">Form not submitted. Some error in running the database query.</span>');
+          }
+          });
+      }	
+  } 
+</script>
+
+
+
+<?php
+
+if (isset($_POST["update"]))
+{
+    mysqli_query($link,"update pois set current_popularity='$_POST[number]' where name='$_POST[visit]'") or die (mysqli_error(($link)));
+}
+?>
+
+<?php
+
+if (isset($_POST["update2"]))
+{
+    mysqli_query($link,"update pois set pois_date='$_POST[date2]',krousmata=krousmata + 1 where name='$_POST[krousma_visit]'") or die (mysqli_error(($link)));
+}
+?>
+
+</html>
+
+
+
+
+                
+

@@ -1,0 +1,96 @@
+<?php
+require("adminconnection.php");
+?>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="css/login.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="message"></div>
+		<form class="box2" action="" method="post">
+			<h1>Sign in</h1>
+			<div><input type="text" id="Username" name="username" value="" placeholder="Username"/></div>
+			<div><input type="email" id="email" name="email" value="" placeholder="Email"/></div>
+			<div><input type="password" id='Password' name="password" value="" placeholder="Password"/></div>
+			<div><input type="button" id='but' onclick="submitForm();" name="save_contact" value="Submit" /></div>
+		</form>
+
+		<div id="message"></div>
+		<form class="box3" action="" method="post">
+		<h1>Are you an Admin?</h1>
+		<div><input type="text" id="Username" name="admin_username" value="" placeholder="Username"/></div>
+		<div><input type="password" id='Password' name="admin_password" value="" placeholder="Password"/></div>
+		<div><input type="submit" id='but3' name="admin" value="Go!" /></div>
+		</form>
+	</body>
+
+	<?php
+
+if(isset($_POST['admin']))
+{
+	$query="SELECT * FROM `admin` WHERE `admin_username`= '$_POST[admin_username]' AND `admin_password`= '$_POST[admin_password]'"; 
+	$result=mysqli_query($con,$query);
+	if(mysqli_num_rows($result)==1)
+	{
+		header("location: admin.html");
+	}
+	else
+	{
+		echo"Incorrect Password";
+	}
+}
+
+
+
+?>
+
+	<script type="text/javascript">
+		function submitForm() 
+		{
+			//to =name deutero einai to name tou input panw
+			var username = document.getElementById("Username").value; 
+			var password = document.getElementById("Password").value; 
+			var email = document.getElementById("email").value;
+			let url = location.href;
+			
+			if (password.length <8) {
+				$('#message').html('<span style="color: red">Password must contain 8 characters');
+ 				return false;
+				} 
+				else if (password.search(/[0-9]/)== -1) {
+				$('#message').html('<span style="color: red">Password must contain a number');
+				return false;
+				}
+				 else if(password.search(/[A-Z]/)== -1) {
+				$('#message').html('<span style="color: red">Password must contain capital letter');
+ 				return false;
+				} 
+				else if(password.search(/[!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]/)== -1) {
+				$('#message').html('<span style="color: red">Password must contain a symbol');
+ 				return false;
+		 		}
+				  else 
+				var formData = {username: username,email: email,password: password};
+				$('#message').html('<span style="color: green">Form submitted successfully</span>');
+				window.location.href = 'insert_update.html';
+				$.ajax({url: "http://localhost/helloworld/api/submit.php", type: 'POST', data: formData, success: function(response)
+				{
+				var res = JSON.parse(response);
+				console.log(res);
+				
+				}	
+			});
+	} 
+
+	</script>
+
+
+
+</html>
+

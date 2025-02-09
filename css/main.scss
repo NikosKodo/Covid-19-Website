@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+//Home page Design
+body {
+    background: #b8cfd1;
+    margin: 0;
+    font-family: 'Bebas Neue';
+}
+
+.panwbar {
+    background: #232d36;
+    padding: 1em;
+
+    .logo {
+        text-decoration: none;
+        font-weight: 700;
+        color: black;
+        font-size: 2em;
+        
+
+        span {
+            color: rgb(159, 161, 32);
+        }
+    }
+
+    nav {
+        display: none;
+    }
+    
+    .container {
+        display: flex;
+        place-content: space-between;
+
+    }
+
+    .mobile-menu {
+        cursor: pointer;
+
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+.hero {
+    text-align: center;
+}
+
+.aristerokouti {
+
+    .misoaristerapanw{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: grey;
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+    }
+
+    .herobutton {
+        background: rgb(177, 55, 55);
+        color: rgb(230, 230, 230);
+        text-decoration: none;
+        padding: .6em 1.3em;
+        font-size: 1.4em;
+        border-radius: .7em;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+
+}
+
+.hero-img {
+    width: 90%;
+    margin-top: 3em;
+    margin-bottom: -3em;
+    border-radius: 300%;
+}
+
+.features-section {
+    background: #3d5369;
+    color: rgb(212, 212, 212);
+}
+
+ul.features-list {
+    margin: 0;
+    padding-left: .1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+    li {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+
+        &:before {
+            content: " ";
+            left: -20em;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            margin-right: .5em;
+        }
+    }
+}
+
+.features-section img {
+    display: none;
+}
+
+.quotes-section {
+    background: #3d5369;
+    color: rgb(218, 218, 218);
+
+    li {
+        background: #232d36;
+        text-align: center;
+        padding: 2em 1em;
+        width: 80%;
+        margin: 0 auto 5em auto;
+        border-radius: 1em;
+
+
+        img {
+            width: 5em;
+            height: 5em;
+            border: 5px solid rgb(152, 158, 60);
+            border-radius: 50%;
+            margin-top: -4.5em;
+        }
+    }
+}
+
+nav.menu-btn {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #232d36;
+    height: 100vh;
+    padding: 1em;
+
+    ul.panwbara {
+        margin-top: 5em;
+    }
+
+    li {
+
+        a {
+            color: rgb(159, 161, 32);
+            text-decoration: none;
+            display: block;
+            padding: .5em;
+            font-size: 1.3em;
+            text-align: right;
+
+            &:hover {
+                font-weight: bold;
+            }
+
+        }
+    }
+
+}
+
+.mobile-menu-exit {
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 750px) {
+    
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+
+    
+
+    .panwbar .container {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .panwbar nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        a {
+            color: rgb(159, 161, 32);
+            font-size: 1.3em;
+            padding:  .1em 2em ;
+            
+        }
+
+        ul.panwbara {
+            margin: 0;
+        }
+
+        li.Homebutton a {
+            text-decoration: underline; 
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1080px) {
+    .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 10em 4em;
+    }
+
+    .hero .container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        .aristerokouti {
+            margin: 3em 3em 0 5em;
+
+            h1 {
+                font-size: 3em;
+                width: 90%;
+            }
+        }
+
+        .hero-img {
+            width: 60%;
+            margin-right: 8em;
+        }
+
+    }
+
+    .hero-box {
+        display: flex;
+    }
+
+    ul.features-list {
+        display: block;
+        margin-left: 5em;
+
+        li {
+            font-size: 1.8em;
+            text-decoration: underline;
+            color: rgb(135, 238, 249);
+            list-style-type: circle;
+        }
+    }
+
+    .features-section {
+        position: relative;
+    }
+
+    .features-section img {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 500px;
+        bottom: -2em;
+        border-radius: 20%;
+    }
+
+    .quotes-section ul {
+        display: flex;
+
+        li {
+            margin: 0 1em;
+
+        }
+    }
+
+}
+
+//Login-css Home page
+.box {
+    width: 250px;
+    padding: 70px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    background: #232d36;
+    text-align: center;
+    bottom: 100px;
+    margin-top: 30px;
+    
+}
+.box h1{
+    color: rgb(204, 204, 204);
+    text-transform: uppercase;
+    font-weight: 500;
+
+} 
+.box input[type = "text"], .box input[type = "password"],
+.box input[type = "email"] {
+
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(172, 74, 74);
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+
+//fixing animation in boxes
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,
+.box input[type = "email"]:focus  {
+    
+    width: 230px;
+    border-color: rgb(159, 161, 32);     
+}
+
+.box input[type = "submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #b8cfd1;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+//ftiaxneis to submit button otan paei panw o cursor na gemizei olo
+.box input[type = "submit"]:hover {
+    background: #b8cfd1;
+}
+

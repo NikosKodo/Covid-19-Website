@@ -1,0 +1,55 @@
+body {
+  background: #89abd1;
+  margin: 0;
+  
+}
+
+  .box2 h1 {
+    color: white;
+    font-weight: 500;
+  }
+
+  .box2 input[type="button"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #770505;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  
+  .box2 input[type="button"]:hover {
+    background: #eb0505;
+  }
+
+  .box3 h1 {
+    color: white;
+    font-weight: 500;
+  }
+  
+  .box3 input[type="button"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #770505;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  
+  .box3 input[type="button"]:hover {
+    background: #eb0505;
+  }

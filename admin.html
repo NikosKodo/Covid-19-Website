@@ -1,0 +1,167 @@
+<?php
+include "databaseconnection.php"
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin lobby</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="admin.css">
+    
+</head>
+<body>
+
+  <form class="box2" action="" method="post">
+    <div><input type="button" id='but' onclick="window.location.href='chartpeople.php'" name="save_contact" value="Visit Chart" /></div>
+  </form>
+
+  <form class="box3" action="" method="post">
+    <div><input type="button" id='but' onclick="window.location.href='chartcases.php'" name="save_contact" value="Cases Chart" /></div>
+  </form>
+
+<div class="container">
+    <div class="lego">
+  <h2>Hello sir!</h2>
+  <form action="" name="kodo" method="POST">
+    <div class="form-group">
+      <label for="id_pois">The id of the location</label>
+      <input type="text" class="form-control" id="id_pois" name="id_pois" value="" placeholder="ID">
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" value="" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" name="address" value="" placeholder="Address">
+    </div>
+    <div class="form-group">
+      <label for="types">Types</label>
+      <input type="text" class="form-control" id="types" name="types" value="" placeholder="Types">
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="text" class="form-control" id="rating" name="rating" value="" placeholder="Rating">
+    </div>
+    <div class="form-group">
+      <label for="rating_n">rating_n</label>
+      <input type="text" class="form-control" id="rating_n" name="rating_n" value="" placeholder="rating_n">
+    </div>
+    <div class="form-group">
+      <label for="current_popularity">Current Popularity</label>
+      <input type="text" class="form-control" id="current_popularity" name="current_popularity" value="" placeholder="Current populariity">
+    </div>
+    <div class="form-group">
+      <label for="lat">Latitude</label>
+      <input type="text" class="form-control" id="lat" name="lat" value="" placeholder="Latitude">
+    </div>
+    <div class="form-group">
+      <label for="lng">Longtitude</label>
+      <input type="text" class="form-control" id="lng" name="lng" value="" placeholder="Longtitude">
+    </div>
+    <div class="form-group">
+      <label for="pois_date">Last update date</label>
+      <input type="text" class="form-control" id="pois_date" name="pois_date" value="" placeholder="Last update date">
+    </div>
+    <div class="form-group">
+      <label for="krousmata">Cases</label>
+      <input type="text" class="form-control" id="krousmata" name="krousmata" value="" placeholder="Cases">
+    </div>
+
+    <button type="submit" name="insert" class="btn btn-default">Insert</button>
+    <button type="submit" name="update" class="btn btn-default">Update</button>
+    <button type="submit" name="delete" class="btn btn-default">delete</button>
+  </form>
+</div>
+</div>
+
+<div class="lego">
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>id_pois</th>
+        <th>name</th>
+        <th>address</th>
+        <th>types</th>
+        <th>rating</th>
+        <th>rating_n</th>
+        <th>current_popularity</th>
+        <th>lat</th>
+        <th>lng</th>
+        <th>pois_date</th>
+        <th>krousmata</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    <?php
+    $res=mysqli_query($link,"select * from pois");
+    while ($row=mysqli_fetch_array($res))
+{
+    echo "<tr>";
+    echo "<td>"; echo $row["id_pois"]; echo "</td>";
+    echo "<td>"; echo $row["name"]; echo "</td>";
+    echo "<td>"; echo $row["address"]; echo "</td>";
+    echo "<td>"; echo $row["types"]; echo "</td>";
+    echo "<td>"; echo $row["rating"]; echo "</td>";
+    echo "<td>"; echo $row["rating_n"]; echo "</td>";
+    echo "<td>"; echo $row["current_popularity"]; echo "</td>";
+    echo "<td>"; echo $row["lat"]; echo "</td>";
+    echo "<td>"; echo $row["lng"]; echo "</td>";
+    echo "<td>"; echo $row["pois_date"]; echo "</td>";
+    echo "<td>"; echo $row["krousmata"]; echo "</td>";
+
+    echo "</tr>";
+}
+    ?>
+     
+    </tbody>
+  </table>
+
+</div>
+</body>
+
+<?php
+
+if (isset($_POST["insert"]))
+{
+    mysqli_query($link,"insert into pois values ('$_POST[id_pois]','$_POST[name]','$_POST[address]','$_POST[types]','$_POST[rating]','$_POST[rating_n]','$_POST[current_popularity]','$_POST[lat]','$_POST[lng]','$_POST[pois_date]','$_POST[krousmata]')");
+
+?>
+<script type="text/javascript">
+  window.location.href=window.location.href;
+  </script>
+<?php
+
+}
+
+if (isset($_POST["delete"]))
+{
+    mysqli_query($link,"delete from pois where name='$_POST[name]'") or die (mysqli_error(($link)));
+?>
+<script type="text/javascript">
+window.location.href=window.location.href;
+</script>
+<?php
+
+}
+
+if (isset($_POST["update"]))
+{
+    mysqli_query($link,"update pois set rating='$_POST[rating]',current_popularity='$_POST[current_popularity]',address='$_POST[address]',rating_n='$_POST[rating_n]',lat='$_POST[lat]',lng='$_POST[lng]',types='$_POST[types]' where name='$_POST[name]'" ) or die (mysqli_error(($link)));
+
+}
+?>
+
+
+</html>
+
+
+    
+

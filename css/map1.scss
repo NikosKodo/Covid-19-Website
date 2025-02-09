@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    
+        background: #92bcc0;
+        margin: 0;
+        font-family: 'Bebas Neue';
+    
+}
+
+#map {
+
+    width: 70%;
+    height: 120vh;
+    margin-top: 7em;
+    margin-left: 40em;
+    margin-right: 100em;
+    margin-bottom: 9em;
+    border: 5px solid #232d36;
+    
+}
+
+.panwbar {
+    background: #232d36;
+    padding: 0.2em;
+}
+
+.logo {
+    padding: 0.5em;
+    display: flex;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(159, 161, 32);
+    font-size: 2em;
+}
+
+.episkepshboxsec {
+
+width: 250px;
+  position: absolute;
+  text-align: center;
+  top: 150px;
+  left: 30px;
+  background: #17202A;
+  padding: 70px;
+  border-radius: 25px;
+}
+.episkepshbox h1{
+    color: rgb(204, 204, 204);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: underline;
+
+} 
+
+.episkepshbox h2{
+    color: rgb(204, 204, 204);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: underline;
+
+} 
+
+.episkepshbox h3{
+    color: rgb(204, 204, 204);
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: underline;
+
+}
+
+.episkepshbox input[type = "text"], .episkepshbox input[type = "number"],
+.episkepshbox input[type = "datetime-local"] {
+
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(172, 74, 74);
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+//fixing animation in boxes
+.episkepshbox input[type = "text"]:focus,.episkepshbox input[type = "number"]:focus,
+.episkepshbox input[type = "datetime-local"]:focus {
+
+    width: 230px;
+    border-color: rgb(159, 161, 32);     
+}
+
+.episkepshbox input[type = "button"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #b8cfd1;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+//ftiaxneis to submit button otan paei panw o cursor na gemizei olo
+
+.episkepshbox input[type = "button"]:hover {
+     background: #b8cfd1;
+}
+  
+//==========================================================================================================================  
+
+
+
+.krousmaboxsec {
+
+    width: 250px;
+      position: absolute;
+      text-align: center;
+      top: 850px;
+      left: 30px;
+      background: #17202A;
+      padding: 70px;
+      border-radius: 25px;
+    }
+    .krousmabox h1{
+        color: rgb(204, 204, 204);
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: underline;
+        
+    
+    } 
+    
+    .krousmabox h2{
+        color: rgb(204, 204, 204);
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: underline;
+        
+    
+    } 
+      
+    .krousmabox input[type = "text"], .krousmabox input[type = "number"],
+    .krousmabox input[type = "datetime-local"] {
+    
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid rgb(172, 74, 74);
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+    
+    //fixing animation in boxes
+    .krousmabox input[type = "text"]:focus,.krousmabox input[type = "number"]:focus,
+    .krousmabox input[type = "datetime-local"]:focus {
+    
+        width: 230px;
+        border-color: rgb(159, 161, 32);     
+    }
+    
+    .krousmabox input[type = "button"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #b8cfd1;
+        padding: 14px 40px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+    
+    //ftiaxneis to submit button otan paei panw o cursor na gemizei olo
+    
+    .krousmabox input[type = "button"]:hover {
+         background: #b8cfd1;
+    }

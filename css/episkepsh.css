@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background: #92bcc0;
+  margin: 0;
+  font-family: 'Bebas Neue';
+}
+
+.episkepshboxsec {
+  width: 250px;
+  position: absolute;
+  text-align: center;
+  top: 770px;
+  left: 30px;
+  background: #17202A;
+  padding: 70px;
+  border-radius: 25px;
+}
+
+.episkepshbox h1 {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.episkepshbox h2 {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.episkepshbox h3 {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.episkepshbox input[type="text"], .episkepshbox input[type="number"],
+.episkepshbox input[type="datetime-local"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ac4a4a;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.episkepshbox input[type="text"]:focus, .episkepshbox input[type="number"]:focus,
+.episkepshbox input[type="datetime-local"]:focus {
+  width: 230px;
+  border-color: #9fa120;
+}
+
+.episkepshbox input[type="button"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #b8cfd1;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.episkepshbox input[type="button"]:hover {
+  background: #b8cfd1;
+}
+
+.krousmaboxsec {
+  width: 250px;
+  position: absolute;
+  text-align: center;
+  top: 75px;
+  left: 30px;
+  background: #17202A;
+  padding: 70px;
+  border-radius: 25px;
+}
+
+.krousmabox h1 {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.krousmabox h2 {
+  color: #cccccc;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.krousmabox input[type="text"], .krousmabox input[type="number"],
+.krousmabox input[type="datetime-local"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ac4a4a;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.krousmabox input[type="text"]:focus, .krousmabox input[type="number"]:focus,
+.krousmabox input[type="datetime-local"]:focus {
+  width: 230px;
+  border-color: #9fa120;
+}
+
+.krousmabox input[type="button"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #b8cfd1;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.krousmabox input[type="button"]:hover {
+  background: #b8cfd1;
+}
+/*# sourceMappingURL=episkepsh.css.map */

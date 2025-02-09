@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Website</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="panwbar">
+        <div class="container">
+            <a class="logo" href="index.html">Covid-19 <span>Website</span></a>
+
+            <img id='mobile-cta' class="mobile-menu" src="html\img/menu.svg" alt="menu">
+
+            <nav>
+                <img id='mobile-exit' class="mobile-menu-exit" src="html\img/exit.svg" alt="close-navigation">
+                <ul class="panwbara">
+                    <li class="Homebutton"><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Sign in</a></li>
+                    <li><a href="#">How to use Covid-19 Website</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="aristerokouti">
+                <p class="misoaristerapanw">Stop the spread now!</p>
+                <h1>Sign in and Save yourself!</h1>
+
+                <div class="hero-box">
+                    <a href="login.html" class="herobutton">Sign in Now!</a>
+                </div>
+
+            </div>
+            
+            <img src="html\img/photo1.jpg" class="hero-img" alt="illustration">
+
+        </div>
+
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <ul class="features-list">
+                <li>Free to use</li>
+                <li>contains all the places of the city of patras</li>
+                <li>Requires only an email and a username</li>
+                <li>It is constantly updated </li>
+                <li>100% preciseness</li>
+            </ul>
+
+            <img src="html\img/watchingphone2.jpg" alt="man searching">
+
+        </div>
+    </section>
+
+    <section class="quotes-section">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="html\img/georgian.jpg" alt="Person">
+
+                    <blockquote>since I started using this COVID-19 website I felt much safer and I wasn't afraid to visit the shops of my favorite city</blockquote>
+                    <cite>- Katerina</cite>
+                </li>
+                <li>
+                    <img src="html\img/man2.jpg" alt="Person2">
+
+                    <blockquote>I recommend everyone to start using this website.It is constantly updated and preciseness</blockquote>
+                    <cite>- Marios</cite>
+                </li>
+                <li>
+                    <img src="html\img/oldwoman.jpg" alt="Person3">
+
+                    <blockquote> I was so afraid to go outside because of the virus and after my daughter told me about this website my life became much more easier! 
+                    </blockquote>
+                    <cite>- Glykeria</cite>
+                </li>
+            </ul>
+
+        </div>   
+    </section>
+
+    <!--javascript menu -->
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+    </script>
+
+    <!--Login
+    <form class="box" action="login.html" method = "post">
+        <h1>Login</h1>
+        <input type="text" name="" placeholder="Username">
+        <input type="email" name="" placeholder="Email">
+        <input type="password" name="" placeholder="Password">
+        <input type="submit" name="" value="Submit"> </form>-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

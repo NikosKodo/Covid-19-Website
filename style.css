@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #92bcc0;
+  margin: 0;
+  font-family: 'Bebas Neue';
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panwbar {
+  position: absolute;
+  background: #232d36;
+  padding: 0.7em;
+}
+
+.logo {
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  font-weight: 700;
+  color: #9fa120;
+  font-size: 3em;
+}
+
+.store-list {
+  margin-top: 7em;
+  width: 17%;
+  height: 100vh;
+  overflow: auto;
+  background: #e9e8e8;
+}
+
+#map {
+  width: 90%;
+  height: 90vh;
+  margin-top: 5em;
+  margin-left: 10em;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+  border: 5px solid #232d36;
+}
+
+.store-list .heading {
+  padding: 3rem;
+  background: #232d36;
+  color: #9fa120;
+  font-size: 1.5em;
+}
+
+.store-list .heading h2 {
+  text-decoration: underline;
+  padding: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9fa120;
+  border-radius: 0;
+}
+
+.store-list ul.list {
+  padding: 0 1rem;
+  list-style-type: none;
+}
+
+.store-list .shop-item {
+  margin: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+
+.store-list li:last-child .shop-item {
+  border: none;
+}
+
+.store-list .shop-item a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #9fa120;
+  font-weight: 700;
+}
+
+.store-list .shop-item p {
+  font-size: 14px;
+  color: #404040;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-popup-content-wrapper h4 {
+  padding: 16px;
+  background: #92bcc0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.leaflet-popup-content-wrapper p {
+  padding: 0 16px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content .phone-number {
+  padding: 16px;
+  padding-top: 0;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content .phone-number a {
+  color: #92bcc0;
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */
